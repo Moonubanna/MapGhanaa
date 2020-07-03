@@ -3,7 +3,13 @@ import { Image, TouchableOpacity, View, Text, DeviceEventEmitter, Platform } fro
 //import { SHOP_CART, MENU, NOTIFICATION ,PROFILE} from '../images'
 import styles from '../components/Auth/styles'
 import Ripple from 'react-native-material-ripple'
-import { LOGO, FLAG_INDIA, IC_GAL_ } from '../images'
+import { LOGO, FLAG_INDIA, IC_GAL_,
+    IC_ORGANIZATIONS,
+    IC_CALL,
+    IC_INDIVIDUALS,
+    IC_LOGOUT,
+    IC_GROUPS,
+    IC_POST_LISTING } from '../images'
 import { WIDTH, KEY, APP_PARAMS, FONT_FAMILIY, SCREEN } from '../constants/index'
 import { colors } from '../theme'
 import { DIMENS, CURRENCY } from '../constants'
@@ -15,19 +21,14 @@ import { IconX, ICON_TYPE, } from '../utility/Icons';
 
 
 const drawerListFirst = [
-    { id: 1, title: translate('ORGANISATION_DRAWER'), subTitle: translate('ORGANISATION_DRAWER'), is_selected: true },
-    { id: 2, title: translate('INDIVISUAL'), subTitle: translate('INDIVISUAL'), is_selected: false },
-    { id: 3, title: translate('NEW_POSTS'), subTitle: translate('NEW_POSTS'), is_selected: false },
-    { id: 4, title: translate('EVENT'), subTitle: translate('EVENT'), is_selected: false },
-    { id: 5, title: translate('GROUP'), subTitle: translate('GROUP'), is_selected: false },
-    { id: 6, title: translate('OBJECTS'), subTitle: translate('OBJECTS'), is_selected: false },
-    { id: 7, title: translate('MY_POST'), subTitle: translate('MY_POST'), is_selected: false },
-    { id: 8, title: translate('FAVORITES'), subTitle: translate('FAVORITES'), is_selected: false },
-    { id: 9, title: translate('ORDERS'), subTitle: translate('ORDERS'), is_selected: false },
-    { id: 10, title: translate('FINANCIAL'), subTitle: translate('FINANCIAL'), is_selected: false },
-    { id: 11, title: translate('CONTACT_US'), subTitle: translate('CONTACT_US'), is_selected: false },
-    { id: 12, title: translate('ABOUT'), subTitle: translate('ABOUT'), is_selected: false },
-    { id: 13, title: translate('LOGOUT'), subTitle: translate('LOGOUT'), is_selected: false },
+    { id: 1, title: translate('ORGANISATION_DRAWER'), subTitle: translate('ORGANISATION_DRAWER'), is_selected: true, icon_name: IC_ORGANIZATIONS },
+    { id: 2, title: translate('EVENT'), subTitle: translate('EVENT'), is_selected: false, icon_name: IC_POST_LISTING },
+    { id: 3, title: translate('INDIVISUAL'), subTitle: translate('INDIVISUAL'), is_selected: false, icon_name: IC_INDIVIDUALS },
+    { id: 4, title: translate('CONTACT_US'), subTitle: translate('CONTACT_US'), is_selected: false, icon_name: IC_CALL },
+    { id: 5, title: translate('ABOUT'), subTitle: translate('ABOUT'), is_selected: false, icon_name: IC_CALL },
+    { id: 6, title: translate('GROUP'), subTitle: translate('GROUP'), is_selected: false, icon_name: IC_GROUPS },
+    { id: 7, title: translate('CUSTOM_ORDERS'), subTitle: translate('CUSTOM_ORDERS'), is_selected: false, icon_name: IC_POST_LISTING },
+    { id: 8, title: translate('LOGOUT'), subTitle: translate('LOGOUT'), is_selected: false, icon_name: IC_LOGOUT },
 ]
 
 //Icons
@@ -70,7 +71,7 @@ export default class CustomDrawer extends React.Component {
                 style={{
                     height: 0.5,
                     width: '100%', alignItems: 'center',
-                    backgroundColor: colors.lightGreen100,
+                    backgroundColor: colors.white,
                 }}
             />
         );
@@ -88,49 +89,31 @@ export default class CustomDrawer extends React.Component {
                 //NavigationService.navigate({ routeName: translate('DRAWER_DASHBOARD'), params: { param: '' }, });
                 this.props.navigation.navigate('Organisation')
                 break;
-            case translate('INDIVISUAL'):
-                this.itemSelected(item)
-                NavigationService.popToTop()
-                this.props.navigation.navigate('Indivisuals')
-                break;
-            case translate('DRAWER_ACTIVITY'):
-                this.itemSelected(item)
-                NavigationService.popToTop()
-                NavigationService.navigate({ routeName: translate('DRAWER_ACTIVITY'), params: { param: '' }, });
-                //this.props.navigation.navigate(translate('DRAWER_ACTIVITY'))
-                break;
-
             case translate('EVENT'):
                 this.itemSelected(item)
                 NavigationService.popToTop()
                 //this.props.navigation.navigate('SendAndRequestTab')
                 NavigationService.navigate({ routeName: 'Events', params: { param: { name: 'Send' } }, });
                 break;
-
-            case translate('DRAWER_PAYMENT_METHODS'):
+            case translate('INDIVISUAL'):
                 this.itemSelected(item)
                 NavigationService.popToTop()
-                this.props.navigation.navigate('PaymentMethods')
+                this.props.navigation.navigate('Indivisuals')
                 break;
-
-            case translate('OBJECTS'):
+            case translate('ABOUT'):
                 this.itemSelected(item)
                 NavigationService.popToTop()
-                this.props.navigation.navigate('Object')
+                NavigationService.navigate({ routeName: SCREEN.COMMON_PAGES, params: { param: translate('ABOUT') }, });
                 break;
-
-            case translate('DRAWER_SETTING'):
+            case translate('CONTACT_US'):
                 this.itemSelected(item)
                 NavigationService.popToTop()
-                this.props.navigation.navigate('Settings')
-                break;
-            case translate('DRAWER_NOTIFICATION'):
-                this.itemSelected(item)
+                NavigationService.navigate({ routeName: SCREEN.COMMON_PAGES, params: { param: translate('CONTACT_US') }, });
                 break;
             case translate('DRAWER_LOGOUT'):
                 this.itemSelected(item)
-                clearData(KEY.USER_DATA)
-                NavigationService.clearStack(SCREEN.LOGIN);
+                //clearData(KEY.USER_DATA)
+                //NavigationService.clearStack(SCREEN.LOGIN);
                 break;
 
             default:
@@ -162,24 +145,28 @@ export default class CustomDrawer extends React.Component {
             }}
                 onPress={() => this.drawerPress(item, index)}>
                 <View style={{
-                    flexDirection: 'row', paddingVertical: DIMENS.px_15,
-                    paddingHorizontal: DIMENS.px_10
+                    flexDirection: 'row', 
+                    paddingVertical: DIMENS.px_15,
+                    paddingHorizontal: DIMENS.px_8
                 }}>
                     <View style={{
                         width: '80%',
-                        flexDirection: 'row'
+                        flexDirection: 'row',
+                        justifyContent:'flex-start',
                     }}>
-                        <IconX
-                            origin={ICON_TYPE.FONT_AWESOME}
-                            name='user'
-                            color={colors.black}
-                            size={25}
+                        <Image
+                        style={{
+                            width:DIMENS.px_20,
+                            height:DIMENS.px_20
+                        }}
+                        source={item.icon_name}
+                        resizeMode={'contain'}
                         />
                         <Text style={{
                             flex: 1,
                             //color: item.is_selected ? colors.color_accent : colors.white,
-                            color: colors.LIGHT_GREY_COLOR,
-                            marginLeft:DIMENS.px_10,
+                            color: colors.white,
+                            marginLeft: DIMENS.px_10,
                             fontSize: DIMENS.txt_size_medium_14,
                             fontFamily: FONT_FAMILIY.Font_Regular
                         }}>{item.title}</Text>
@@ -187,12 +174,12 @@ export default class CustomDrawer extends React.Component {
                     <View style={{
                         width: '20%',
                         flexDirection: 'row',
-                        justifyContent:'flex-end'
+                        justifyContent: 'flex-end'
                     }}>
                         <IconX
                             origin={ICON_TYPE.SIMPLE_LINE_ICON}
                             name='arrow-right'
-                            color={colors.black}
+                            color={colors.white}
                             size={20}
                         />
                     </View>
@@ -205,7 +192,7 @@ export default class CustomDrawer extends React.Component {
             <ScrollView showsVerticalScrollIndicator={false}
                 contentContainerStyle={{ paddingBottom: 20 }}
                 style={{
-                    backgroundColor: colors.white
+                    backgroundColor: colors.yellow600
                 }}
                 bounces={false}>
                 <Ripple
@@ -214,7 +201,7 @@ export default class CustomDrawer extends React.Component {
                         flexDirection: 'row',
                         width: '100%',
                         padding: DIMENS.px_15,
-                        backgroundColor: colors.red800
+                        backgroundColor: colors.white
                     }}
                     onPress={() => {
                         NavigationService.popToTop()
@@ -249,7 +236,7 @@ export default class CustomDrawer extends React.Component {
                                 flexDirection: 'column'
                             }}>
                             <Text style={{
-                                color: colors.white,
+                                color: colors.black_dark,
                                 fontFamily: FONT_FAMILIY.Font_Medium,
                                 fontSize: DIMENS.txt_size_large,
                                 textAlign: 'center'
@@ -257,7 +244,7 @@ export default class CustomDrawer extends React.Component {
                                 Gal Gadot
                             </Text>
                             <Text style={{
-                                color: colors.white,
+                                color: colors.black,
                                 fontFamily: FONT_FAMILIY.Font_Regular,
                                 fontSize: DIMENS.txt_size_small_12,
                                 marginTop: DIMENS.px_5,
@@ -273,7 +260,7 @@ export default class CustomDrawer extends React.Component {
                 </Ripple>
                 <View style={{
                     flex: 1,
-                    backgroundColor: colors.white
+                    backgroundColor: colors.yellow600
                 }}>
                     <FlatList
                         data={this.state.drawerListFirstArr}

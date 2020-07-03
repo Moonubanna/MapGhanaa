@@ -63,6 +63,7 @@ const BottomBarData = [
 ]
 
 //org.reactjs.native.example.mapGHANA
+//BR.mapGHANA
 export default class Dashboard extends React.PureComponent {
     constructor(props) {
         super(props)

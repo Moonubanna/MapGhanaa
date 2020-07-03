@@ -1,6 +1,6 @@
 import React from 'react'
 import { Image, TouchableOpacity, View, Text, Platform } from 'react-native'
-import { MENU, BACK } from '../images'
+import { MENU, BACK,EVENT_MARKER } from '../images'
 import styles from '../components/Auth/styles'
 import Ripple from 'react-native-material-ripple'
 
@@ -41,7 +41,7 @@ export default ({ menuPress, header,size, backPress,isBack, logOutPress,
                 <IconMenu
                     name={'menu'}
                     size={28||size}
-                    color={colors.black} />}
+                    color={colors.white} />}
 
             {/* <Image source={isBack ? BACK : MENU}
                 style={{
@@ -54,7 +54,7 @@ export default ({ menuPress, header,size, backPress,isBack, logOutPress,
         <Text
             style={{
                 fontSize: DIMENS.txt_size_large,
-                color: colors.black,
+                color: colors.white,
                 fontFamily: FONT_FAMILIY.Roboto_Regular,
                 fontWeight: 'bold',
                 textAlign:'center',
@@ -68,10 +68,14 @@ export default ({ menuPress, header,size, backPress,isBack, logOutPress,
                     width: DIMENS.px_30, height: DIMENS.px_30, right: DIMENS.px_0,
                     position: 'absolute'
                 }}>
-                    <Icon
-                        name={'ios-notifications-outline'||name}
-                        size={28}
-                        color={colors.black} />
+                    <Image
+                    style={{
+                        width:DIMENS.px_23,
+                        height:DIMENS.px_25
+                    }}
+                    source={EVENT_MARKER}
+                    resizeMode={'contain'} 
+                    />
                 </Ripple>
                 :
                 isRightActivity ?

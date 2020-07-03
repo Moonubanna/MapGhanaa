@@ -215,24 +215,10 @@ export const CURRENCY = {
     POUND_STERLING: '\u00A3'
 }
 export const SCREEN = {
-    INTRO_SCREEN: 'IntroScreen',
     LOGIN: 'Login',
-    SIGNUPTYPE: 'SignupType',
     SIGNUP: 'Signup',
-    SIGNUP_BUSINESS: 'SignupBusiness',
-    SIGNUP_ADDRESS: 'SignupAddress',
-    SIGNUP_BUSINESS_ADDRESS: 'SignupBusinessAddress',
-    TWO_FACTOR_AUTH: 'TwoFactorAuthentication',
-    TWO_FACTOR_AUTH_LOGIN: 'TwoFactorAuthLogin',
-    KYC_VERIFICATION: 'KYCVerfication',
     DASHBOARD: 'Dashboard',
-    ADD_CARD_BANK_ACCOUNT: 'AddCardBankAccount',
-    ADD_BANK_ACCOUNT: 'AddBankAccount',
-    ADD_CARD: 'AddACard',
-    TRADE: 'Trade',
-    SEND_REQUEST_EXCHANGE: 'SendRequestExchange',
-    CONTACT_INFO: 'ContactInfo',
-    ACTIVITY_BACK: 'ActivityBack',
+    COMMON_PAGES:'CommonPages'
 }
 
 //Usefull BancX

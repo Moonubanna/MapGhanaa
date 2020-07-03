@@ -11,14 +11,16 @@ import Dashboard from './containers/Screens/Dashboard';
 
 //Back Screens
 import AddCardBankAccount from './containers/Screens/AddCardBankAccount';
-
- import CustomDrawer from './common/CustomDrawer';
- import { AuthLoadingScreen } from './common/AuthLoadingScreen';
- import Organisation from './containers/Screens/Organisation'
+import Organisation from './containers/Screens/Organisation'
  import OrganisationDetail from './containers/Screens/OrganisationDetail'
  import Indivisuals from './containers/Screens/Indivisuals'
  import Events from './containers/Screens/Events'
  import Objects from './containers/Screens/Objects'
+import CommonPages from './containers/Screens/CommonPages';
+
+ import CustomDrawer from './common/CustomDrawer';
+ import { AuthLoadingScreen } from './common/AuthLoadingScreen';
+
 
 
 global.HeaderHeight = Header.HEIGHT;
@@ -46,6 +48,7 @@ const AppNavigator1 = createStackNavigator({
   Indivisuals:{screen: Indivisuals,navigationOptions:{header:null}},
   Events:{screen: Events,navigationOptions:{header:null}},
   Object:{screen: Objects,navigationOptions:{header:null}},
+  CommonPages:{screen: CommonPages,navigationOptions:{header:null}},
   Drawer:{
     screen:DrawerNavigator,
     navigationOptions: {

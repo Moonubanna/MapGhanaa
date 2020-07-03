@@ -21,6 +21,13 @@ export const IC_POPULAR_INDIVIDUALS_ = require('../src/assets/images/ic_popular_
 export const IC_ALL_INDIVIDUALS_ = require('../src/assets/images/ic_all_individuals.png')
 export const IC_GAL_ = require('../src/assets/images/gal.jpg')
 
+export const IC_ORGANIZATIONS = require('../src/assets/images/organizations.png')
+export const IC_CALL = require('../src/assets/images/call.png')
+export const IC_INDIVIDUALS = require('../src/assets/images/individuals.png')
+export const IC_LOGOUT = require('../src/assets/images/log.png')
+export const IC_GROUPS = require('../src/assets/images/groups.png')
+export const IC_POST_LISTING = require('../src/assets/images/post_listing.png')
+
 
 
 export default {
@@ -45,5 +52,11 @@ export default {
   IC_POPULAR_,
   IC_POPULAR_INDIVIDUALS_,
   IC_ALL_INDIVIDUALS_,
-  IC_GAL_
+  IC_GAL_,
+  IC_ORGANIZATIONS,
+  IC_CALL,
+  IC_INDIVIDUALS,
+  IC_LOGOUT,
+  IC_GROUPS,
+  IC_POST_LISTING
 }

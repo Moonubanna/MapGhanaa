@@ -278,7 +278,7 @@ export const colors = {
   yellow300: '#fff176',
   yellow400: '#ffee58',
   yellow500: '#ffeb3b',
-  yellow600: '#fdd835',
+  yellow600: '#F9CA14',
   yellow700: '#fbc02d',
   yellow800: '#f9a825',
   yellow900: '#f57f17',

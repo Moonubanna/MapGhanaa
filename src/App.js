@@ -61,11 +61,11 @@ class App extends React.Component {
   render() {
     const { online } = this.props
     return (
-      <SafeAreaView style={{backgroundColor:colors.color_primary,flex:1,width:'100%'}}>
+      <SafeAreaView style={{backgroundColor:colors.color_accent_dark,flex:1,width:'100%'}}>
       <View style={styles.container}>
         <StatusBar
-          backgroundColor={colors.yellow700}
-          barStyle='dark-content'
+          backgroundColor={colors.color_accent_dark}
+          barStyle='default'
         />
        <View style={styles.navigatorView}>
             <Navigator ref={NavigationService.init} />
