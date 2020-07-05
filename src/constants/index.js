@@ -218,7 +218,21 @@ export const SCREEN = {
     LOGIN: 'Login',
     SIGNUP: 'Signup',
     DASHBOARD: 'Dashboard',
-    COMMON_PAGES:'CommonPages'
+    COMMON_PAGES:'CommonPages',
+    SCREEN_ORGANIZATION_DETAIL:'OrganisationDetail',
+    ORGANIZATIONTO_ORDER:'OrannizationToOrder',
+    SCREEN_SERVICES:'Service',
+    SCREEN_POST_LISTING:'PostListing',
+    SCREEN_POST_ORGANIZATION:'PostOrganization',
+    SCREEN_POST_INDIVIDUAL:'PostIndividual',
+    SCREEN_ORDER_MENU:'OrdersMenu',
+    SCREEN_ALL_ORGANIZATION:'AllOrganisation',
+    SCREEN_EVENTS:'Events',
+    SCREEN_EVENT_LIST:'EventList',
+    SCREEN_EVENT_DETAIL:'EventDetail',
+    SCREEN_GROUP_LIST:'GroupList',
+    SCREEN_GROUP:'Group',
+    SCREEN_ADD_GROUP:'AddGroup',
 }
 
 //Usefull BancX

@@ -26,8 +26,8 @@ export class AuthLoadingScreen extends React.Component {
   _bootstrapAsync = async () => {
 
     setTimeout(() => {
-      NavigationService.clearStack('Drawer')
-      //NavigationService.clearStack(SCREEN.LOGIN);
+      //NavigationService.clearStack('Drawer')
+      NavigationService.clearStack(SCREEN.LOGIN);
       // retrieveData(KEY.USER_DATA,result=>{
       //   if(result!=undefined&&result){
       //     NavigationService.clearStack('Drawer')

@@ -32,63 +32,20 @@ import MarqueeText from 'react-native-marquee';
 import { IconX, ICON_TYPE } from '../../utility/Icons';
 
 const { height, width } = Dimensions.get('screen')
-import StarRating from 'react-native-star-rating';
 
-
-//Icons
-import Feather from 'react-native-vector-icons/Feather';
-import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
-
-const cityArray = [
-    'jaipur', 'ajmer', 'nagaur'
-]
-
-const BottomBarData = [
-    {
-        image: AVTAR,
-        'name': 'Category name',
-        ratting: '3.2',
-        desc: 'Description'
-    },
-    {
-        image: AVTAR,
-        'name': 'Category name',
-        ratting: '3.2',
-        desc: 'Description'
-    },
-    {
-        image: AVTAR,
-        'name': 'Category name',
-        ratting: '3.2',
-        desc: 'Description'
-    },
-    {
-        image: AVTAR,
-        'name': 'Category name',
-        ratting: '3.2',
-        desc: 'Description'
-    },
-
-]
-
-
-export default class OrganisationDetail extends React.PureComponent {
+export default class PostOrganization extends React.PureComponent {
     constructor(props) {
         super(props)
-
-
         this.state = {
             showDropDown: false,
-            selectedCity: 'Jaipur',
-            bottomBarData: BottomBarData
         }
     }
     componentDidMount() {
-        console.log('componentDidMount of OrganisationDetail screen')
+        console.log('componentDidMount of PostOrganization screen')
         Orientation.lockToPortrait();
     }
     componentWillUnmount() {
-        console.log('componentWillUnmount of OrganisationDetail screen')
+        console.log('componentWillUnmount of PostOrganization screen')
     }
 
     FlatListItemSeparator = () => {
@@ -174,11 +131,11 @@ export default class OrganisationDetail extends React.PureComponent {
                     }}
                         disabled={false}
                         onPress={() => {
-                              NavigationService.navigate({ routeName: SCREEN.ORGANIZATIONTO_ORDER, params: { param: {} }, });
+                              NavigationService.navigate({ routeName: SCREEN.SCREEN_POST_LISTING, params: { param: {} }, });
                         }}>
                         {
                             <Text style={{ color: colors.white, fontFamily: FONT_FAMILIY.Font_Bold, padding: DIMENS.px_15, textAlign: 'center' }}>
-                                {translate('VIEW_DETAILS')}
+                                {'CREATE POST'}
                             </Text>
                         }
                     </Ripple>
@@ -193,71 +150,4 @@ export default class OrganisationDetail extends React.PureComponent {
             </View>
         )
     }
-}
-
-const RenderBottomBar = (item, index) => {
-    console.log('item  ', item)
-    return (
-        <Ripple style={{
-            display: 'flex', alignItems: 'center',
-            padding: DIMENS.px_10,
-            flexDirection: 'row'
-        }}>
-            <View style={{ display: 'flex', backgroundColor: colors.green800, padding: DIMENS.px_14, borderRadius: 3 }}>
-                <IconX
-                    origin={ICON_TYPE.FONT_AWESOME}
-                    name='user'
-                    color={colors.black}
-                    size={25}
-                />
-            </View>
-            <View
-                style={{ marginLeft: DIMENS.px_20 }}
-            >
-
-                <Text style={{
-                    color: colors.black,
-                    fontFamily: FONT_FAMILIY.Font_Bold,
-                    fontSize: 14, marginTop: 3
-                }}>
-                    {item.name}
-                </Text>
-
-                <View style={{ display: 'flex', marginTop: 5, alignItems: 'center', flexDirection: 'row' }}>
-
-                    <Text style={{
-                        color: colors.grey600,
-                        fontFamily: FONT_FAMILIY.Font_Bold,
-                        fontSize: 12, marginTop: 3
-                    }}>
-                        {item.ratting}
-                    </Text>
-                    <StarRating
-                        disabled={false}
-                        fullStarColor={colors.yellow800}
-                        starStyle={{ marginLeft: 4 }}
-                        maxStars={5}
-                        containerStyle={{ marginLeft: 10 }}
-                        starSize={15}
-                        emptyStarColor={colors.yellow700}
-                        rating={3.5}
-                    // selectedStar={(rating) => this.onStarRatingPress(rating)}
-                    />
-
-                </View>
-
-
-
-                <Text style={{
-                    color: colors.grey600,
-                    fontFamily: FONT_FAMILIY.Font_Regular,
-                    fontSize: 12, marginTop: 3
-                }}>
-                    {item.desc}
-                </Text>
-            </View>
-
-
-        </Ripple>
-    )
 }

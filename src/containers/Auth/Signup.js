@@ -2,7 +2,7 @@ import { connect } from 'react-redux'
 
 import Signup from '../../components/Auth/Signup'
 import {
-    signUpIndiDuplicateEmailApi
+    //signUpIndiDuplicateEmailApi
 } from '../../thunks'
 
 const mapStateToProps = ({ Signup  }) => ({
@@ -12,7 +12,7 @@ const mapStateToProps = ({ Signup  }) => ({
 })
 
 const mapDispatchToProps = {
-    requestSignUpIndiDuplicateEmail:signUpIndiDuplicateEmailApi
+    //requestSignUpIndiDuplicateEmail:signUpIndiDuplicateEmailApi
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Signup)

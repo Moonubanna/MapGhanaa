@@ -15,8 +15,20 @@ import Organisation from './containers/Screens/Organisation'
  import OrganisationDetail from './containers/Screens/OrganisationDetail'
  import Indivisuals from './containers/Screens/Indivisuals'
  import Events from './containers/Screens/Events'
+ import EventList from './containers/Screens/EventList'
+ import EventDetail from './containers/Screens/EventDetail'
  import Objects from './containers/Screens/Objects'
 import CommonPages from './containers/Screens/CommonPages';
+import OrannizationToOrder from './containers/Screens/OrannizationToOrder';
+import Service from './containers/Screens/Service';
+import PostListing from './containers/Screens/PostListing';
+import PostOrganization from './containers/Screens/PostOrganization';
+import PostIndividual from './containers/Screens/PostIndividual';
+import OrdersMenu from './containers/Screens/OrdersMenu';
+import AllOrganisation from './containers/Screens/AllOrganisation';
+import GroupList from './containers/Screens/GroupList';
+import Group from './containers/Screens/Group';
+import AddGroup from './containers/Screens/AddGroup';
 
  import CustomDrawer from './common/CustomDrawer';
  import { AuthLoadingScreen } from './common/AuthLoadingScreen';
@@ -45,10 +57,22 @@ const AppNavigator1 = createStackNavigator({
   AddCardBankAccount:{screen:AddCardBankAccount, navigationOptions:{header:null}},
   Organisation:{screen: Organisation,navigationOptions:{header:null}},
   OrganisationDetail:{screen: OrganisationDetail,navigationOptions:{header:null}},
+  OrannizationToOrder:{screen: OrannizationToOrder,navigationOptions:{header:null}},
   Indivisuals:{screen: Indivisuals,navigationOptions:{header:null}},
   Events:{screen: Events,navigationOptions:{header:null}},
+  EventList:{screen: EventList,navigationOptions:{header:null}},
+  EventDetail:{screen: EventDetail,navigationOptions:{header:null}},
   Object:{screen: Objects,navigationOptions:{header:null}},
   CommonPages:{screen: CommonPages,navigationOptions:{header:null}},
+  Service:{screen: Service,navigationOptions:{header:null}},
+  PostListing:{screen: PostListing,navigationOptions:{header:null}},
+  PostOrganization:{screen: PostOrganization,navigationOptions:{header:null}},
+  PostIndividual:{screen: PostIndividual,navigationOptions:{header:null}},
+  OrdersMenu:{screen: OrdersMenu,navigationOptions:{header:null}},
+  AllOrganisation:{screen: AllOrganisation,navigationOptions:{header:null}},
+  GroupList:{screen: GroupList,navigationOptions:{header:null}},
+  Group:{screen: Group,navigationOptions:{header:null}},
+  AddGroup:{screen: AddGroup,navigationOptions:{header:null}},
   Drawer:{
     screen:DrawerNavigator,
     navigationOptions: {

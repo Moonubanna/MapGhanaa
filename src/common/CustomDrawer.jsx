@@ -9,7 +9,8 @@ import { LOGO, FLAG_INDIA, IC_GAL_,
     IC_INDIVIDUALS,
     IC_LOGOUT,
     IC_GROUPS,
-    IC_POST_LISTING } from '../images'
+    IC_POST_LISTING,
+    IC_ABOUT, IC_EVENT } from '../images'
 import { WIDTH, KEY, APP_PARAMS, FONT_FAMILIY, SCREEN } from '../constants/index'
 import { colors } from '../theme'
 import { DIMENS, CURRENCY } from '../constants'
@@ -22,10 +23,10 @@ import { IconX, ICON_TYPE, } from '../utility/Icons';
 
 const drawerListFirst = [
     { id: 1, title: translate('ORGANISATION_DRAWER'), subTitle: translate('ORGANISATION_DRAWER'), is_selected: true, icon_name: IC_ORGANIZATIONS },
-    { id: 2, title: translate('EVENT'), subTitle: translate('EVENT'), is_selected: false, icon_name: IC_POST_LISTING },
+    { id: 2, title: translate('EVENT'), subTitle: translate('EVENT'), is_selected: false, icon_name: IC_EVENT },
     { id: 3, title: translate('INDIVISUAL'), subTitle: translate('INDIVISUAL'), is_selected: false, icon_name: IC_INDIVIDUALS },
     { id: 4, title: translate('CONTACT_US'), subTitle: translate('CONTACT_US'), is_selected: false, icon_name: IC_CALL },
-    { id: 5, title: translate('ABOUT'), subTitle: translate('ABOUT'), is_selected: false, icon_name: IC_CALL },
+    { id: 5, title: translate('ABOUT'), subTitle: translate('ABOUT'), is_selected: false, icon_name: IC_ABOUT },
     { id: 6, title: translate('GROUP'), subTitle: translate('GROUP'), is_selected: false, icon_name: IC_GROUPS },
     { id: 7, title: translate('CUSTOM_ORDERS'), subTitle: translate('CUSTOM_ORDERS'), is_selected: false, icon_name: IC_POST_LISTING },
     { id: 8, title: translate('LOGOUT'), subTitle: translate('LOGOUT'), is_selected: false, icon_name: IC_LOGOUT },
@@ -85,30 +86,40 @@ export default class CustomDrawer extends React.Component {
         switch (item.title) {
             case translate('ORGANISATION_DRAWER'):
                 this.itemSelected(item)
-                NavigationService.popToTop()
+                //NavigationService.popToTop()
                 //NavigationService.navigate({ routeName: translate('DRAWER_DASHBOARD'), params: { param: '' }, });
                 this.props.navigation.navigate('Organisation')
                 break;
             case translate('EVENT'):
                 this.itemSelected(item)
-                NavigationService.popToTop()
+                //NavigationService.popToTop()
                 //this.props.navigation.navigate('SendAndRequestTab')
-                NavigationService.navigate({ routeName: 'Events', params: { param: { name: 'Send' } }, });
+                NavigationService.navigate({ routeName: SCREEN.SCREEN_EVENT_LIST, params: { param: {} }, });
                 break;
             case translate('INDIVISUAL'):
                 this.itemSelected(item)
-                NavigationService.popToTop()
+                //NavigationService.popToTop()
                 this.props.navigation.navigate('Indivisuals')
                 break;
             case translate('ABOUT'):
                 this.itemSelected(item)
-                NavigationService.popToTop()
+                //NavigationService.popToTop()
                 NavigationService.navigate({ routeName: SCREEN.COMMON_PAGES, params: { param: translate('ABOUT') }, });
                 break;
             case translate('CONTACT_US'):
                 this.itemSelected(item)
-                NavigationService.popToTop()
+                //NavigationService.popToTop()
                 NavigationService.navigate({ routeName: SCREEN.COMMON_PAGES, params: { param: translate('CONTACT_US') }, });
+                break;
+            case translate('GROUP'):
+                this.itemSelected(item)
+                //NavigationService.popToTop()
+                NavigationService.navigate({ routeName: SCREEN.SCREEN_GROUP, params: { param: {} }, });
+                break;
+            case translate('CUSTOM_ORDERS'):
+                this.itemSelected(item)
+                //NavigationService.popToTop()
+                NavigationService.navigate({ routeName: SCREEN.SCREEN_ORDER_MENU, params: { param: {} }, });
                 break;
             case translate('DRAWER_LOGOUT'):
                 this.itemSelected(item)

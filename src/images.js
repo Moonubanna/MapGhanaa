@@ -27,6 +27,10 @@ export const IC_INDIVIDUALS = require('../src/assets/images/individuals.png')
 export const IC_LOGOUT = require('../src/assets/images/log.png')
 export const IC_GROUPS = require('../src/assets/images/groups.png')
 export const IC_POST_LISTING = require('../src/assets/images/post_listing.png')
+export const BACKGROUND_ONE = require('../src/assets/images/bg_one.png')
+export const BACKGROUND_TWO = require('../src/assets/images/bg_two.png')
+export const IC_ABOUT = require('../src/assets/images/about.png')
+export const IC_EVENT = require('../src/assets/images/event.png')
 
 
 
@@ -58,5 +62,10 @@ export default {
   IC_INDIVIDUALS,
   IC_LOGOUT,
   IC_GROUPS,
-  IC_POST_LISTING
+  IC_POST_LISTING,
+  BACKGROUND_ONE,
+  BACKGROUND_TWO,
+  IC_ABOUT,
+  IC_EVENT
+  
 }

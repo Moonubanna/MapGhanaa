@@ -31,9 +31,6 @@ import MarqueeText from 'react-native-marquee';
 import { IconX, ICON_TYPE } from '../../utility/Icons';
 
 const { height, width } = Dimensions.get('screen')
-//Icons
-import Feather from 'react-native-vector-icons/Feather';
-import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 
 const cityArray = [
     'jaipur', 'ajmer', 'nagaur'
@@ -114,7 +111,7 @@ export default class Dashboard extends React.PureComponent {
                 <CommonHeaderHome
                     menuPress={() => this.props.navigation.openDrawer()}
                     isBack={false}
-                    isRightIcon={true}
+                    isRightIcon={false}
                     isRightNoti={true}
                     header={translate('EXPLORE_')} />
 
@@ -318,7 +315,7 @@ export default class Dashboard extends React.PureComponent {
 
                         <Ripple
                             onPress={() => {
-                                this.props.navigation.navigate('Organisation')
+                                NavigationService.navigate({ routeName: SCREEN.SCREEN_POST_ORGANIZATION, params: { param: {} }, });
                                 this.setState({ modalVisible: false })
                             }}
                             style={{
@@ -340,7 +337,7 @@ export default class Dashboard extends React.PureComponent {
 
                         <Ripple
                             onPress={() => {
-                                this.props.navigation.navigate('Indivisuals')
+                                NavigationService.navigate({ routeName: SCREEN.SCREEN_POST_INDIVIDUAL, params: { param: {} }, });
                                 this.setState({ modalVisible: false })
 
                             }}
@@ -363,12 +360,10 @@ export default class Dashboard extends React.PureComponent {
 
                         <Ripple 
                           onPress={() => {
-                            this.props.navigation.navigate('Events')
+                            NavigationService.navigate({ routeName: SCREEN.SCREEN_EVENT_LIST, params: { param: {} }, });
                             this.setState({ modalVisible: false })
-
                         }}
                         style={{
-                            
                             paddingLeft: 10, padding: 8,
                             marginTop: 8, backgroundColor: colors.grey300,
                             borderRadius: DIMENS.px_2, justifyContent: 'center'
@@ -388,7 +383,10 @@ export default class Dashboard extends React.PureComponent {
                             paddingLeft: 10, padding: 8,
                             marginTop: 8, backgroundColor: colors.grey300,
                             borderRadius: DIMENS.px_2, justifyContent: 'center'
-
+                        }}
+                        onPress={() => {
+                            NavigationService.navigate({ routeName: SCREEN.SCREEN_GROUP, params: { param: {} }, });
+                            this.setState({ modalVisible: false })
                         }}>
                             <Text
                                 style={{
@@ -399,33 +397,15 @@ export default class Dashboard extends React.PureComponent {
                                 }}
                             >{translate('GROUP')}</Text>
                         </Ripple>
-
-                        {/* <Ripple 
-                           onPress={() => {
-                            this.props.navigation.navigate('Object')
-                            this.setState({ modalVisible: false })
-
-                        }}
-                        style={{
-                            paddingLeft: 10, padding: 8,
-                            marginTop: 8, backgroundColor: colors.grey300,
-                            borderRadius: DIMENS.px_2, justifyContent: 'center'
-
-                        }}>
-                            <Text
-                                style={{
-                                    fontFamily: FONT_FAMILIY.Font_Regular,
-                                    paddingLeft: 0, borderRadius: 4,
-                                    textAlign: 'left', backgroundColor: colors.grey300
-                                }}
-                            >{translate('OBJECTS')}</Text>
-                        </Ripple> */}
-
                         <Ripple style={{
                             paddingLeft: 10, padding: 8,
                             marginTop: 8, backgroundColor: colors.grey300,
                             borderRadius: DIMENS.px_2, justifyContent: 'center'
 
+                        }}
+                        onPress={()=>{
+                            NavigationService.navigate({ routeName: SCREEN.SCREEN_ORDER_MENU, params: { param: {} }, });
+                            this.setState({ modalVisible: false })
                         }}>
                             <Text
                                 style={{
@@ -467,7 +447,7 @@ export default class Dashboard extends React.PureComponent {
             style={{ display: 'flex', alignItems: 'center', width: width / 4, justifyContent: 'center', padding: DIMENS.px_10 }}
             onPress={()=>{
                 if(item.id == 1){
-                    this.props.navigation.navigate('Organisation')
+                    NavigationService.navigate({ routeName: SCREEN.SCREEN_ALL_ORGANIZATION, params: { param: {} }, });
                 }else if(item.id == 2){
                     this.props.navigation.navigate('Organisation')
                 }else if(item.id == 3){

@@ -156,7 +156,7 @@ export default class Indivisuals extends React.PureComponent {
                     <View style={{ display: 'flex', margin: 5,top:-15 }}>
                         <FlatList
                             data={this.state.bottomBarData}
-                            renderItem={({ item, index }) => RenderBottomBar(item, index)}
+                            renderItem={({ item, index }) => this.RenderBottomBar(item, index)}
                             extraData={this.state}
                             keyExtractor={(item, index) => index.toString()}
                             style={{ backgroundColor: colors.grey200 }}
@@ -195,71 +195,74 @@ export default class Indivisuals extends React.PureComponent {
             </View>
         )
     }
-}
 
-const RenderBottomBar = (item, index) => {
-    console.log('item  ', item)
-    return (
-        <Ripple style={{
-            display: 'flex', alignItems: 'center',
-            padding: DIMENS.px_10,
-            flexDirection: 'row'
-        }}>
-            <View style={{ display: 'flex', backgroundColor: colors.green800, padding: DIMENS.px_14, borderRadius: 3 }}>
-                <IconX
-                    origin={ICON_TYPE.FONT_AWESOME}
-                    name='user'
-                    color={colors.black}
-                    size={25}
-                />
-            </View>
-            <View
-                style={{ marginLeft: DIMENS.px_20 }}
-            >
-
-                <Text style={{
-                    color: colors.black,
-                    fontFamily: FONT_FAMILIY.Font_Bold,
-                    fontSize: 14, marginTop: 3
-                }}>
-                    {item.name}
-                </Text>
-
-                <View style={{ display: 'flex', marginTop: 5, alignItems: 'center', flexDirection: 'row' }}>
-
+    RenderBottomBar = (item, index) => {
+        console.log('item  ', item)
+        return (
+            <Ripple style={{
+                display: 'flex', alignItems: 'center',
+                padding: DIMENS.px_10,
+                flexDirection: 'row'
+            }}
+            onPress={()=>{
+                NavigationService.navigate({ routeName: SCREEN.ORGANIZATIONTO_ORDER, params: { param: {} }, });
+            }}>
+                <View style={{ display: 'flex', backgroundColor: colors.green800, padding: DIMENS.px_14, borderRadius: 3 }}>
+                    <IconX
+                        origin={ICON_TYPE.FONT_AWESOME}
+                        name='user'
+                        color={colors.black}
+                        size={25}
+                    />
+                </View>
+                <View
+                    style={{ marginLeft: DIMENS.px_20 }}
+                >
+    
+                    <Text style={{
+                        color: colors.black,
+                        fontFamily: FONT_FAMILIY.Font_Bold,
+                        fontSize: 14, marginTop: 3
+                    }}>
+                        {item.name}
+                    </Text>
+    
+                    <View style={{ display: 'flex', marginTop: 5, alignItems: 'center', flexDirection: 'row' }}>
+    
+                        <Text style={{
+                            color: colors.grey600,
+                            fontFamily: FONT_FAMILIY.Font_Bold,
+                            fontSize: 12, marginTop: 3
+                        }}>
+                            {item.ratting}
+                        </Text>
+                        <StarRating
+                            disabled={false}
+                            fullStarColor={colors.yellow800}
+                            starStyle={{ marginLeft: 4 }}
+                            maxStars={5}
+                            containerStyle={{ marginLeft: 10 }}
+                            starSize={15}
+                            emptyStarColor={colors.yellow700}
+                            rating={3.5}
+                        // selectedStar={(rating) => this.onStarRatingPress(rating)}
+                        />
+    
+                    </View>
+    
+    
+    
                     <Text style={{
                         color: colors.grey600,
-                        fontFamily: FONT_FAMILIY.Font_Bold,
+                        fontFamily: FONT_FAMILIY.Font_Regular,
                         fontSize: 12, marginTop: 3
                     }}>
-                        {item.ratting}
+                        {item.desc}
                     </Text>
-                    <StarRating
-                        disabled={false}
-                        fullStarColor={colors.yellow800}
-                        starStyle={{ marginLeft: 4 }}
-                        maxStars={5}
-                        containerStyle={{ marginLeft: 10 }}
-                        starSize={15}
-                        emptyStarColor={colors.yellow700}
-                        rating={3.5}
-                    // selectedStar={(rating) => this.onStarRatingPress(rating)}
-                    />
-
                 </View>
-
-
-
-                <Text style={{
-                    color: colors.grey600,
-                    fontFamily: FONT_FAMILIY.Font_Regular,
-                    fontSize: 12, marginTop: 3
-                }}>
-                    {item.desc}
-                </Text>
-            </View>
-
-
-        </Ripple>
-    )
+    
+    
+            </Ripple>
+        )
+    }
 }

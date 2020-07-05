@@ -2,6 +2,7 @@ import React from "react";
 
 import Ionicons from "react-native-vector-icons/Ionicons";
 import Entypo from "react-native-vector-icons/Entypo";
+import Fontisto from "react-native-vector-icons/Fontisto";
 import Octicons from "react-native-vector-icons/Octicons";
 import AntDesign from "react-native-vector-icons/AntDesign";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
@@ -22,6 +23,7 @@ export const ICON_TYPE = {
 	MATERIAL_ICONS: "MaterialIcons",
 	FEATHER_ICONS: "FEATHER",
 	ENTYPO: "ENTYPO",
+	FONTISTO: "Fontisto",
 	OCTICONS: "OCTICONS",
 	MATERIAL_COMMUNITY: "MATERIALCOMMUNITY",
 	SIMPLE_LINE_ICON: "SIMPLELINEICONS"
@@ -42,6 +44,10 @@ export const IconX = ({ origin, name, color, size, paddingLeft, style }) => {
 
 		case ICON_TYPE.ENTYPO:
 			Element = Entypo;
+			break;
+
+		case ICON_TYPE.FONTISTO:
+			Element = Fontisto;
 			break;
 
 		case ICON_TYPE.MATERIAL_ICONS:
