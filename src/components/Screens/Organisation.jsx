@@ -200,7 +200,7 @@ export default class Organisation extends React.PureComponent {
                 flexDirection: 'row'
             }}
             onPress={()=>{
-                NavigationService.navigate({ routeName: SCREEN.ORGANIZATIONTO_ORDER, params: { param: {} }, });
+                NavigationService.navigate({ routeName: SCREEN.SCREEN_USER_NAME_TO_ORDER, params: { param: {} }, });
             }}>
                 <View style={{ display: 'flex', backgroundColor: colors.green800, padding: DIMENS.px_14, borderRadius: 3 }}>
                     <IconX

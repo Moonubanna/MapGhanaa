@@ -10,6 +10,7 @@ export default {
   ABOUT_US: 'About',
   CONTACT_US: 'Contact Us',
   PROFILE: 'Profile',
+  HEADER_EVENT:'Event',
 
   //placeholder
   PLACEHOLDER_FULL_NAME: "Full Name",
@@ -245,7 +246,32 @@ NEW_RELEASE:'New Release',
 DETAIL_EVENT:'Detail Event',
 START:'Start :',
 JOIN_EVENT:'Join Event',
-BUY_TICKET:'Buy Ticket'
+BUY_TICKET:'Buy Ticket',
+PAYMENT_CONFIRMATION:'Payment Confirmation',
+BY_SUBMIT_THIS:'By submitting this order you assert that you have already discussed with the vender and mutually agreed to the amount you provice',
+YES:'Yes',
+NO:'No',
+IN_PROGRESS:'IN PROGRESS',
+YOUR_ORDER:'YOUR ORDER IS NOW IN PROGRESS',
+OK:'OK',
+CONFIRM_ORDER:'Confirm order',
+ORDER_RECIVED:'Order Received',
+ORDER_AMMOUNT:'Order Amount',
+PROCESSING_FEE:'Processing fee',
+PAYABLE:'Payable',
+PAY:'Pay',
+CANCEL:'Cancel',
+GROUP_INFO:'GROUP INFO',
+ORDER_ACCEPTED:'ORDER ACCEPTED',
+YOU_WILL_BE_CONTACTED:'You will be contacted for more details by Phone / Email/Whatsapp',
+A_GROUP:'A group of ome',
+LOREM_DUMMY_TEXT:'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s',
+ADMIN_CONTACT:'Admin Contact',
+CHAT_LINK:'Chat link',
+MEDIA:'MEDIA',
+MEDIA_:'Media',
+TYPE_:'TYPE',
+FEATURES_:'FEATURES'
 
 
 };

@@ -31,6 +31,7 @@ export const BACKGROUND_ONE = require('../src/assets/images/bg_one.png')
 export const BACKGROUND_TWO = require('../src/assets/images/bg_two.png')
 export const IC_ABOUT = require('../src/assets/images/about.png')
 export const IC_EVENT = require('../src/assets/images/event.png')
+export const IC_QR_CODE = require('../src/assets/images/qr_code.png')
 
 
 
@@ -66,6 +67,7 @@ export default {
   BACKGROUND_ONE,
   BACKGROUND_TWO,
   IC_ABOUT,
-  IC_EVENT
+  IC_EVENT,
+  IC_QR_CODE
   
 }

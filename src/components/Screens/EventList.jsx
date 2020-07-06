@@ -143,7 +143,7 @@ export default class EventList extends React.PureComponent {
                     onPressPlusButton={() => {
                         NavigationService.navigate({ routeName: SCREEN.SCREEN_EVENTS, params: { param: {} }, });
                     }}
-                    header={translate('EXPLORE_')} />
+                    header={translate('HEADER_EVENT')} />
 
                 <View style={{
                     flex: 1,

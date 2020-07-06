@@ -292,7 +292,10 @@ const RenderImageList = (item, index) => {
     console.log('item  ', item)
     return (
         <Ripple
-            onPress={() => { modalVisible = true }}
+            onPress={() => {
+                { modalVisible = true }
+                NavigationService.navigate({ routeName: SCREEN.SCREEN_GROUP_INFO, params: { param: {} }, });
+            }}
             style={{
                 display: 'flex', alignItems: 'center',
                 flexDirection: 'row', margin: 10

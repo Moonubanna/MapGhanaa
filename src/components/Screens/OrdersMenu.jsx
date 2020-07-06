@@ -145,13 +145,45 @@ export default class OrdersMenu extends React.PureComponent {
                 backgroundColor: colors.grey200,
                 flex: 1, width: '100%',
             }}>
-                <CommonHeaderHome
-                    backPress={() => this.onBackPress()}
-                    isBack={true}
-                    size={12}
-                    isRightIcon={false}
-                    isRightNoti={true}
-                    header={translate('ORDER_MENU')} />
+                <View style={{ display: 'flex', padding: 15, flexDirection: 'row', alignItems: 'center', backgroundColor: colors.yellow600 }}>
+                    <Ripple style={{ alignItems: 'center', flex: 1 }}
+                    onPress={()=>{
+                        this.onBackPress()
+                    }}>
+                        <IconX
+                            origin={ICON_TYPE.SIMPLE_LINE_ICON}
+                            name='arrow-left'
+                            color={colors.white}
+                            size={18}
+                        />
+                    </Ripple>
+                    <Text
+                        style={{
+                            flex: 7,
+                            fontFamily: FONT_FAMILIY.Font_Regular,
+                            borderRadius: 4,
+                            textAlign: 'center', fontWeight: 'bold',
+                            color: 'black', paddingLeft: 25
+                        }}
+                    >{translate('ORDER_MENU')}</Text>
+
+                    <View
+                        style={{ flexDirection: 'row', flex: 2, justifyContent: 'flex-end', }}>
+                            <Ripple 
+                            onPress={()=>{
+                                NavigationService.navigate({ routeName: SCREEN.SCREEN_PURCHASE, params: { param: {} }, });
+                            }}>
+                        <IconX
+                            origin={ICON_TYPE.ANT_ICON}
+                            name='pluscircleo'
+                            color={colors.black}
+                            size={22}
+                            style={{ marginLeft: DIMENS.px_8 }}
+                        />
+                        </Ripple>
+                    </View>
+
+                </View>
 
                 <View style={{
                     flex: 1, padding: DIMENS.px_15

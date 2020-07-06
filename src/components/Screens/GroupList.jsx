@@ -221,6 +221,9 @@ export default class GroupList extends React.PureComponent {
                 display: 'flex',
                 padding: DIMENS.px_10,
                 backgroundColor: 'white', elevation: 5, marginVertical: 5, borderRadius: 5
+            }}
+            onPress={()=>{
+                NavigationService.navigate({ routeName: SCREEN.SCREEN_GROUP_INFO, params: { param: {} }, });
             }}>
                 <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', }}>
                     <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', }}>

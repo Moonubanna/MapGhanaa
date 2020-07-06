@@ -447,13 +447,13 @@ export default class Dashboard extends React.PureComponent {
             style={{ display: 'flex', alignItems: 'center', width: width / 4, justifyContent: 'center', padding: DIMENS.px_10 }}
             onPress={()=>{
                 if(item.id == 1){
-                    NavigationService.navigate({ routeName: SCREEN.SCREEN_ALL_ORGANIZATION, params: { param: {} }, });
+                    //NavigationService.navigate({ routeName: SCREEN.SCREEN_ALL_ORGANIZATION, params: { param: {} }, });
                 }else if(item.id == 2){
                     this.props.navigation.navigate('Organisation')
                 }else if(item.id == 3){
                     this.props.navigation.navigate('Indivisuals')
                 }else{
-                    this.props.navigation.navigate('Indivisuals')
+                    //this.props.navigation.navigate('Indivisuals')
                 }
             }}>
                 <Image

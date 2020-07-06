@@ -233,6 +233,9 @@ export const SCREEN = {
     SCREEN_GROUP_LIST:'GroupList',
     SCREEN_GROUP:'Group',
     SCREEN_ADD_GROUP:'AddGroup',
+    SCREEN_PURCHASE:'Purchase',
+    SCREEN_USER_NAME_TO_ORDER:'UserNameToOrder',
+    SCREEN_GROUP_INFO:'GroupInfo',
 }
 
 //Usefull BancX

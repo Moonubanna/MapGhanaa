@@ -29,6 +29,9 @@ import AllOrganisation from './containers/Screens/AllOrganisation';
 import GroupList from './containers/Screens/GroupList';
 import Group from './containers/Screens/Group';
 import AddGroup from './containers/Screens/AddGroup';
+import Purchase from './containers/Screens/Purchase';
+import UserNameToOrder from './containers/Screens/UserNameToOrder';
+import GroupInfo from './containers/Screens/GroupInfo';
 
  import CustomDrawer from './common/CustomDrawer';
  import { AuthLoadingScreen } from './common/AuthLoadingScreen';
@@ -73,6 +76,9 @@ const AppNavigator1 = createStackNavigator({
   GroupList:{screen: GroupList,navigationOptions:{header:null}},
   Group:{screen: Group,navigationOptions:{header:null}},
   AddGroup:{screen: AddGroup,navigationOptions:{header:null}},
+  Purchase:{screen: Purchase,navigationOptions:{header:null}},
+  UserNameToOrder:{screen: UserNameToOrder,navigationOptions:{header:null}},
+  GroupInfo:{screen: GroupInfo,navigationOptions:{header:null}},
   Drawer:{
     screen:DrawerNavigator,
     navigationOptions: {

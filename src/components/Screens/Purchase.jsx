@@ -43,7 +43,7 @@ const cityArray = [
 ]
 
 
-export default class Service extends React.PureComponent {
+export default class Purchase extends React.PureComponent {
     constructor(props) {
         super(props)
 
@@ -51,15 +51,14 @@ export default class Service extends React.PureComponent {
         this.state = {
             showDropDown: false,
             selectedCity: 'Jaipur',
-            modalVisible:false
         }
     }
     componentDidMount() {
-        console.log('componentDidMount of Service screen')
+        console.log('componentDidMount of Purchase screen')
         Orientation.lockToPortrait();
     }
     componentWillUnmount() {
-        console.log('componentWillUnmount of Service screen')
+        console.log('componentWillUnmount of Purchase screen')
     }
 
 
@@ -82,15 +81,203 @@ export default class Service extends React.PureComponent {
                     size={12}
                     isRightIcon={false}
                     isRightNoti={false}
-                    header={translate('SERVICE')} />
+                    header={translate('PURCHASE')} />
 
                 <ScrollView style={{
                     flex: 1, padding: DIMENS.px_10
                 }}>
 
+
+
                     <Text
                         style={{
                             fontFamily: FONT_FAMILIY.Font_Regular,
+                            borderRadius: 4,
+                            fontWeight: 'bold',
+                            textAlign: 'left',
+                            marginTop: 10, color: 'black'
+                        }}
+                    >{translate('TYPE')}</Text>
+
+
+                    <Ripple
+                        onPress={() => {
+                            //     this.ActionSheet.show()
+
+                        }}
+                        style={{
+                            flex: 7.5, display: 'flex',
+                            flexDirection: 'row', justifyContent: 'space-between',
+                            paddingHorizontal: 10,
+                            borderWidth: 1, borderRadius: 3,
+                            alignItems: 'center', minHeight: DIMENS.px_45,
+                            maxHeight: DIMENS.px_45, marginTop: 10,
+                        }}
+                    >
+                        <Text
+                            style={{
+                                fontFamily: FONT_FAMILIY.Font_Light,
+                                paddingLeft: 0
+                            }}
+                        >Purchase</Text>
+                        <IconX
+                            origin={ICON_TYPE.SIMPLE_LINE_ICON}
+                            name='arrow-down'
+                            color={colors.black}
+                            size={18}
+                        />
+
+                    </Ripple>
+
+                    <Text
+                        style={{
+                            fontFamily: FONT_FAMILIY.Font_Regular,
+                            fontWeight: 'bold',
+                            borderRadius: 4,
+                            textAlign: 'left',
+                            marginTop: 10, color: 'black'
+                        }}
+                    >{translate('NOTE')}</Text>
+
+                    <TextInput
+                        placeholderTextColor={colors.grey400}
+                        keyboardType={'default'}
+                        ref={(refs) => this.passRef = refs}
+                        // onChangeText={(txt) => {
+                        //     this.setState({ passTxtField: txt })
+                        // }}
+                        returnKeyType="done"
+                        value={this.state.passTxtField}
+                        style={{
+                            width: '100%',
+                            paddingLeft: 10,
+                            marginTop: 10,
+                            minHeight: 100,
+                            maxHeight: DIMENS.px_45,
+                            color: colors.black,
+                            borderWidth: 1,
+                            borderRadius: 3,
+
+                        }}
+                    />
+
+
+
+                    <Text
+                        style={{
+                            fontFamily: FONT_FAMILIY.Font_Regular,
+                            borderRadius: 4,
+                            fontWeight: 'bold',
+                            textAlign: 'left',
+                            marginTop: 10, color: 'black'
+                        }}
+                    >{translate('BUDGUT')}</Text>
+
+                    <TextInput
+                        placeholderTextColor={colors.grey400}
+                        keyboardType={'default'}
+                        ref={(refs) => this.passRef = refs}
+                        // onChangeText={(txt) => {
+                        //     this.setState({ passTxtField: txt })
+                        // }}
+                        returnKeyType="done"
+                        value={this.state.passTxtField}
+                        style={{
+                            width: '100%',
+                            paddingLeft: 10,
+                            marginTop: 10,
+                            minHeight: DIMENS.px_45,
+                            maxHeight: DIMENS.px_45,
+                            color: colors.black,
+                            borderWidth: 1,
+                            borderRadius: 3,
+
+                        }}
+                    />
+                    <Text
+                        style={{
+                            fontFamily: FONT_FAMILIY.Font_Regular,
+                            fontWeight: 'bold',
+                            borderRadius: 4,
+                            textAlign: 'left',
+                            marginTop: 10, color: 'black'
+                        }}
+                    >{translate('LINK_')}</Text>
+
+                    <TextInput
+                        placeholderTextColor={colors.grey400}
+                        keyboardType={'default'}
+                        ref={(refs) => this.passRef = refs}
+                        // onChangeText={(txt) => {
+                        //     this.setState({ passTxtField: txt })
+                        // }}
+                        returnKeyType="done"
+                        value={this.state.passTxtField}
+                        style={{
+                            width: '100%',
+                            paddingLeft: 10,
+                            marginTop: 10,
+                            minHeight: DIMENS.px_45,
+                            maxHeight: DIMENS.px_45,
+                            color: colors.black,
+                            borderWidth: 1,
+                            borderRadius: 3,
+
+                        }}
+                    />
+                    <Text
+                        style={{
+                            fontFamily: FONT_FAMILIY.Font_Regular,
+                            borderRadius: 4,
+                            textAlign: 'left',
+                            fontWeight: 'bold',
+                            marginTop: 10, color: 'black'
+                        }}
+                    >{translate('MEDIA')}</Text>
+
+                    <View style={{ display: 'flex', marginTop: 5, borderRadius: 3, padding: 30, backgroundColor: colors.green600, justifyContent: 'center', alignItems: 'center' }}>
+                        <IconX
+                            origin={ICON_TYPE.ANT_ICON}
+                            name='camera'
+                            color={colors.white}
+                            size={22}
+                        />
+
+                        <Text
+                            style={{
+                                fontFamily: FONT_FAMILIY.Font_Regular,
+                                borderRadius: 4,
+                                textAlign: 'left',
+                                marginTop: 10, color: 'white'
+                            }}
+                        >{translate('UPLOAD_IMAGE')}</Text>
+                    </View>
+
+                    <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', marginTop: 10, justifyContent: 'space-between', padding: 7, backgroundColor: colors.grey300 }}>
+
+                        <Text
+                            style={{
+                                fontFamily: FONT_FAMILIY.Font_Regular,
+                                borderRadius: 4,
+                                textAlign: 'left', fontWeight: 'bold',
+                                color: 'black'
+                            }}
+                        >{translate('TARGET_INFO')}</Text>
+
+                        <IconX
+                            origin={ICON_TYPE.SIMPLE_LINE_ICON}
+                            name='arrow-down'
+                            color={colors.black}
+                            size={18}
+                        />
+                    </View>
+
+
+
+                    <Text
+                        style={{
+                            fontFamily: FONT_FAMILIY.Font_Regular,
+                            fontWeight: 'bold',
                             borderRadius: 4,
                             textAlign: 'left',
                             marginTop: 10, color: 'black'
@@ -118,61 +305,47 @@ export default class Service extends React.PureComponent {
 
                         }}
                     />
-
                     <Text
                         style={{
                             fontFamily: FONT_FAMILIY.Font_Regular,
+                            fontWeight: 'bold',
                             borderRadius: 4,
                             textAlign: 'left',
                             marginTop: 10, color: 'black'
                         }}
-                    >{translate('TYPE')}</Text>
+                    >{translate('TARGET_ON')}</Text>
 
-                    <Ripple
-                        onPress={() => {
-                            //     this.ActionSheet.show()
-
-                        }}
+                    <TextInput
+                        placeholderTextColor={colors.grey400}
+                        keyboardType={'default'}
+                        ref={(refs) => this.passRef = refs}
+                        // onChangeText={(txt) => {
+                        //     this.setState({ passTxtField: txt })
+                        // }}
+                        returnKeyType="done"
+                        value={this.state.passTxtField}
                         style={{
-                            flex: 7.5, display: 'flex',
-                            flexDirection: 'row', justifyContent: 'space-between',
-                            paddingHorizontal: 10,
-                            borderWidth: 1, borderRadius: 3,
-                            alignItems: 'center', minHeight: DIMENS.px_45,
-                            maxHeight: DIMENS.px_45, marginTop: 10,
+                            width: '100%',
+                            paddingLeft: 10,
+                            marginTop: 10,
+                            minHeight: DIMENS.px_45,
+                            maxHeight: DIMENS.px_45,
+                            color: colors.black,
+                            borderWidth: 1,
+                            borderRadius: 3,
+
                         }}
-                    >
-                        <Text
-                            style={{
-                                fontFamily: FONT_FAMILIY.Font_Light,
-                                paddingLeft: 0
-                            }}
-                        ></Text>
-                        <IconX
-                            origin={ICON_TYPE.SIMPLE_LINE_ICON}
-                            name='arrow-down'
-                            color={colors.black}
-                            size={18}
-                        />
+                    />
+                    <Text
+                        style={{
+                            fontFamily: FONT_FAMILIY.Font_Regular,
+                            fontWeight: 'bold',
+                            borderRadius: 4,
+                            textAlign: 'left',
+                            marginTop: 10, color: 'black'
+                        }}
+                    >{translate('TARGET_PAYMENT')}</Text>
 
-                    </Ripple>
-
-                    <View style={{
-                        display: 'flex', flexDirection: 'row',
-                    }}>
-
-
-                        <Text
-                            style={{
-                                fontFamily: FONT_FAMILIY.Font_Regular,
-                                borderRadius: 4,
-                                textAlign: 'left',
-                                marginTop: 10, color: 'black'
-                            }}
-                        >{translate('NOTES')}</Text>
-
-
-                    </View>
                     <TextInput
                         placeholderTextColor={colors.grey400}
                         keyboardType={'default'}
@@ -196,113 +369,21 @@ export default class Service extends React.PureComponent {
                     />
 
 
-                    <Text
-                        style={{
-                            fontFamily: FONT_FAMILIY.Font_Regular,
-                            borderRadius: 4,
-                            textAlign: 'left',
-                            marginTop: 10, color: 'black'
-                        }}
-                    >{translate('AMMOUNT')}</Text>
-
-                    <TextInput
-                        placeholderTextColor={colors.grey400}
-                        keyboardType={'default'}
-                        ref={(refs) => this.passRef = refs}
-                        // onChangeText={(txt) => {
-                        //     this.setState({ passTxtField: txt })
-                        // }}
-                        returnKeyType="done"
-                        value={this.state.passTxtField}
-                        style={{
-                            width: '100%',
-                            paddingLeft: 10,
-                            marginTop: 10,
-                            minHeight: DIMENS.px_45,
-                            maxHeight: DIMENS.px_45,
-                            color: colors.black,
-                            borderWidth: 1,
-                            borderRadius: 3,
-
-                        }}
-                    />
-
-                    <Text
-                        style={{
-                            fontFamily: FONT_FAMILIY.Font_Regular,
-                            borderRadius: 4,
-                            textAlign: 'left',
-                            marginTop: 10, color: 'black'
-                        }}
-                    >{translate('LINK_OP')}</Text>
-
-                    <TextInput
-                        placeholderTextColor={colors.grey400}
-                        keyboardType={'default'}
-                        ref={(refs) => this.passRef = refs}
-                        // onChangeText={(txt) => {
-                        //     this.setState({ passTxtField: txt })
-                        // }}
-                        returnKeyType="done"
-                        value={this.state.passTxtField}
-                        style={{
-                            width: '100%',
-                            paddingLeft: 10,
-                            marginTop: 10,
-                            minHeight: DIMENS.px_45,
-                            maxHeight: DIMENS.px_45,
-                            color: colors.black,
-                            borderWidth: 1,
-                            borderRadius: 3,
-
-                        }}
-                    />
-
-                    <Text
-                        style={{
-                            fontFamily: FONT_FAMILIY.Font_Regular,
-                            borderRadius: 4,
-                            textAlign: 'left',
-                            marginTop: 10, color: 'black'
-                        }}
-                    >{translate('MEDIA')}</Text>
-
-
-                    <View style={{ display: 'flex', borderRadius: 3, marginTop: 5, padding: 30, backgroundColor: colors.green600, justifyContent: 'center', alignItems: 'center' }}>
-                        <IconX
-                            origin={ICON_TYPE.ANT_ICON}
-                            name='camera'
-                            color={colors.white}
-                            size={22}
-                        />
-
-                        <Text
-                            style={{
-                                fontFamily: FONT_FAMILIY.Font_Regular,
-                                borderRadius: 4,
-                                textAlign: 'left',
-                                marginTop: 10, color: 'white'
-                            }}
-                        >{translate('UPLOAD_IMAGE')}</Text>
-                    </View>
-
 
 
                     <Ripple style={{
-                        width: '60%',
+                        width: '50%',
                         alignSelf: 'center',
-                        marginTop: DIMENS.px_20,
+                        marginTop: DIMENS.px_10,
                         backgroundColor: colors.yellow600,
-                        borderRadius: DIMENS.px_5,
+                        borderRadius: DIMENS.px_2,
                         justifyContent: 'center'
 
                     }}
                         disabled={false}
                         onPress={() => {
                             // this.props.navigation.navigate('OrganisationDetail')
-                            this.setState({
-                                modalVisible:true
-                            })
+
                         }}>
                         {
                             <Text style={{ color: colors.black, fontFamily: FONT_FAMILIY.Font_Bold, padding: DIMENS.px_15, textAlign: 'center' }}>
@@ -311,102 +392,14 @@ export default class Service extends React.PureComponent {
                         }
                     </Ripple>
 
-
-
-                    <View style={{ height: 15 }}></View>
-
                 </ScrollView>
+
+
+
 
                 {loading ?
                     <Loader /> : null}
-                    {this.state.modalVisible &&
-                        this.PaymentConfirmationModel()
-                    }
             </View>
-        )
-    }
-
-    PaymentConfirmationModel = () => {
-        return (
-            <Modal isVisible={true}
-                onBackdropPress={() => { this.setState({ modalVisible: true }) }}
-            >
-                <View style={{ margin: 40, borderRadius: 4, backgroundColor: 'white', padding: DIMENS.px_10, }}>
-                    <Text style={{
-                        color: colors.black,
-                        fontSize: 10,
-                        fontFamily: FONT_FAMILIY.Font_Medium,
-                        padding: DIMENS.px_15, textAlign: 'center'
-                    }}>
-                        {translate('PAYMENT_CONFIRMATION')}
-                    </Text>
-
-                    <View style={{
-                        backgroundColor: colors.grey300,
-                        height: 1, width: '100%',
-                    }} />
-
-                    <Text style={{
-                        color: colors.black,
-                        fontFamily: FONT_FAMILIY.Font_Medium, fontSize: 11,
-                        padding: DIMENS.px_15, textAlign: 'center'
-                    }}>
-                        {translate('BY_SUBMIT_THIS')}
-                    </Text>
-
-                    <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-around' }}
-                    >
-
-                        <Ripple style={{
-                            width: '40%',
-                            height: 35,
-                            alignSelf: 'center',
-                            marginTop: DIMENS.px_20,
-                            backgroundColor: colors.yellow600,
-                            borderRadius: DIMENS.px_2,
-                            justifyContent: 'center'
-
-                        }}
-                            disabled={false}
-                            onPress={() => {
-                                this.setState({ modalVisible: false })
-                            }}>
-                            {
-                                <Text style={{
-                                    color: colors.black, fontFamily: FONT_FAMILIY.Font_Bold,
-                                    padding: DIMENS.px_10, textAlign: 'center', fontSize: 10
-                                }}>
-                                    {translate('YES')}
-                                </Text>
-                            }
-                        </Ripple>
-
-                        <Ripple style={{
-                            width: '40%',
-                            height: 35,
-                            alignSelf: 'center',
-                            marginTop: DIMENS.px_20,
-                            backgroundColor: colors.yellow600,
-                            borderRadius: DIMENS.px_2,
-                            justifyContent: 'center'
-
-                        }}
-                            disabled={false}
-                            onPress={() => {
-                                this.setState({ modalVisible: false })
-                            }}>
-                            {
-                                <Text style={{ color: colors.black, fontSize: 10, 
-                                fontFamily: FONT_FAMILIY.Font_Bold, padding: DIMENS.px_10, textAlign: 'center' }}>
-                                    {translate('NO')}
-                                </Text>
-                            }
-                        </Ripple>
-
-                    </View>
-                </View>
-
-            </Modal>
         )
     }
 }
@@ -438,6 +431,30 @@ const RenderBottomBar = (item, index) => {
                 }}>
                     {item.name}
                 </Text>
+
+                <View style={{ display: 'flex', marginTop: 5, alignItems: 'center', flexDirection: 'row' }}>
+
+                    <Text style={{
+                        color: colors.grey600,
+                        fontFamily: FONT_FAMILIY.Font_Bold,
+                        fontSize: 12, marginTop: 3
+                    }}>
+                        {item.ratting}
+                    </Text>
+                    <StarRating
+                        disabled={false}
+                        fullStarColor={colors.yellow800}
+                        starStyle={{ marginLeft: 4 }}
+                        maxStars={5}
+                        containerStyle={{ marginLeft: 10 }}
+                        starSize={15}
+                        emptyStarColor={colors.yellow700}
+                        rating={3.5}
+                    // selectedStar={(rating) => this.onStarRatingPress(rating)}
+                    />
+
+                </View>
+
 
 
                 <Text style={{
