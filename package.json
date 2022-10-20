@@ -47,7 +47,7 @@
     "react-native-pages": "^0.9.0",
     "react-native-paper": "^3.6.0",
     "react-native-qrcode-svg": "^6.0.6",
-    "react-native-reanimated": "^1.7.0",
+    "react-native-reanimated": "^2.10.0",
     "react-native-safe-area-context": "^0.7.3",
     "react-native-screens": "^2.4.0",
     "react-native-simple-dialogs": "^1.2.1",
